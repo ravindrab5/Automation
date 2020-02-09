@@ -1,0 +1,7 @@
+<suite name="DemoTest">
+<test name="testngTest">
+<classes>
+<class name="com.rohit.automation.scripts.CheckValidLogin" />
+</classes>
+</test>
+</suite>

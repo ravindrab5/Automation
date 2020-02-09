@@ -22,10 +22,18 @@ public class LoginPage {
 	@FindBy(xpath="//button[text()='Login']")
 	private WebElement loginBtn;
 	
-	public void login(String uname,String pass){
+	@FindBy(css=".alert.alert-danger")
+	private WebElement errorMsg;
+	
+	public AccountPage login(String uname,String pass){
 		username.sendKeys(uname);
 		password.sendKeys(pass);
 		loginBtn.click();
+		return new AccountPage(driver);
+	}
+	
+	public String getErrorText(){
+		return errorMsg.getText();
 	}
 	
 }
